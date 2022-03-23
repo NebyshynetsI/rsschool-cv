@@ -12,5 +12,22 @@
 * ##### ***Git/GitHub***
 * #####  ***.Net***
 ### Code Example
+```
+getTasksButton.addEventListener("click", () => {
+    const promise = getTasks(1234567);
+    promise
+    .then(onTasksReceived); 
+});
+function onTasksReceived(tasks){
+    const result = document.querySelector('#tasks-result'); 
+    result.innerHTML = '';
+    tasks.forEach(task => {        
+        const li = document.createElement('li');
+        li.innerHTML = task.title;
+        li.id = task.id;
+        result.appendChild(li);
+    });
+}
+```
 ### English
 ##### Intermediate - ***B1***
